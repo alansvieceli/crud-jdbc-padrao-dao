@@ -54,12 +54,8 @@ public class SellerDaoJDBC implements SellerDao {
 
 			if (rs.next()) {
 
-				Department dep = new Department();
-				dep.setId(rs.getInt("DepartmentId"));
-				dep.setName(rs.getString("DepName"));
-
-				Seller seller = new Seller(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
-						rs.getDate("birthdate"), rs.getDouble("basesalary"), dep);
+				Department dep = Utils.instantiateDepartment(rs);
+				Seller seller = Utils.instantiateSeller(rs, dep);
 				
 				return seller;
 
