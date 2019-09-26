@@ -7,13 +7,13 @@ public class Department implements Serializable {
 	private static final long serialVersionUID = 8360038879140831974L;
 	
 	private int id;
-	private int name;
+	private String name;
 	
 	public Department() {
 		
 	}
 
-	public Department(int id, int name) {
+	public Department(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -26,11 +26,11 @@ public class Department implements Serializable {
 		this.id = id;
 	}
 
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
