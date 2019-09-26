@@ -33,9 +33,15 @@ public class App {
 		});
 		
 		System.out.println("\n=== Teste 4: Seller - insert(Seller seller) ===");
-		Seller sellerInc = new Seller(0, "Rosa", "rosa.maria@empresa.com.br", new Date(), 3200.12, dep);
-		sellerDao.insert(sellerInc);
-		System.out.println("Depois de Inserir: " + sellerInc);
+		seller = new Seller(0, "Rosa", "rosa.maria@empresa.com.br", new Date(), 3200.12, dep);
+		sellerDao.insert(seller);
+		System.out.println("Depois de Inserir: " + seller);
+		
+		System.out.println("\n=== Teste 5: Seller - update(Seller seller) ===");
+		seller = sellerDao.findById(7);
+		seller.setName(seller.getName() + " XXX ");
+		sellerDao.update(seller);
+		System.out.println(seller);
 		
 	}
 
