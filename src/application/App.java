@@ -43,6 +43,11 @@ public class App {
 		sellerDao.update(seller);
 		System.out.println(seller);
 		
+		System.out.println("\n === Teste 6: Seller - delete(Integer id) ===");
+		seller = sellerDao.findById(10);
+		sellerDao.deleteById(seller.getId());
+		System.out.println(seller.getId() + " Foi deletado");
+		
 	}
 
 }
